@@ -3,3 +3,13 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+/resources/0Harmony.dll
+/resources/Assembly-CSharp.dll
+/resources/SmashTools.dll
+/resources/UnityEngine.dll
+/resources/UnityEngine.CoreModule.dll
+/resources/UnityEngine.IMGUIModule.dll
+/resources/UnityEngine.TextRenderingModule.dll
+/resources/UpdateLogTool.dll
+/resources/VanillaVehiclesExpanded.dll
+/resources/Vehicles.dll
