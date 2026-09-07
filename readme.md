@@ -16,6 +16,7 @@ Ideas
 - Loading Big Bomb
 - Crafting a big bomb
 - Aircraft Engine
+- aluminum?
 
 
 
