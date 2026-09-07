@@ -10,7 +10,7 @@
 		<graphicData>
             <texPath>Things/Vehicles/Tier4/Tier4_Warthog/Tier4_Warthog</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(18, 18)</drawSize>
+			<drawSize>(12, 12)</drawSize>
 		</graphicData>
 		
 		<statBases>
@@ -19,7 +19,7 @@
 			<Flammability>0.5</Flammability>
 		</statBases>
 		
-		<size>(18, 18)</size>
+		<size>(12, 12)</size>
 		
 		<researchPrerequisites>
 			<li>VVE_CombatVehicles</li>

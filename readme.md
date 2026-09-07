@@ -17,6 +17,7 @@ Ideas
 - Crafting a big bomb
 - Aircraft Engine
 - aluminum?
+- Safe Eject Piolet on crashes
 
 
 

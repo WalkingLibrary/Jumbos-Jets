@@ -9,7 +9,7 @@
 			<texPath>Things/Vehicles/Tier4/Tier4_Warthog/Tier4_Warthog</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(18, 18)</drawSize>
+			<drawSize>(12, 12)</drawSize>
 			<color>(146, 137, 131)</color>
 			<colorTwo>(84, 75, 68)</colorTwo>
 			<colorThree>(67, 61, 58)</colorThree>
@@ -19,10 +19,10 @@
 		
 		<buildDef>VVE_Warthog_Blueprint</buildDef>
 		
-		<size>(18, 18)</size>
+		<size>(12, 12)</size>
 		
 		<canCaravan LockSetting = "True">false</canCaravan>
-		<vehicleCategory>Jet</vehicleCategory>
+		<vehicleCategory>Transport</vehicleCategory>
 		<techLevel>Industrial</techLevel>
 		<vehicleType>Air</vehicleType>
 		
@@ -419,8 +419,8 @@
 							<lockShadowZ>true</lockShadowZ>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-2, 30)</width>
-								<height>(-3, 3)</height>
+								<width>(-5, 60)</width>
+								<height>(-6, 5)</height>
 								
 								<fillPercent>0.21</fillPercent>
 							</restriction>
@@ -470,8 +470,8 @@
 							<flipVertical>South</flipVertical>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-3, 3)</width>
-								<height>(-2, 30)</height>
+								<width>(-5, 6)</width>
+								<height>(-5, 60)</height>
 								
 								<fillPercent>0.21</fillPercent>
 							</restriction>
@@ -509,8 +509,8 @@
 							<lockShadowZ>true</lockShadowZ>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-30, 2)</width>
-								<height>(-3, 3)</height>
+								<width>(-60, 6)</width>
+								<height>(-6, 5)</height>
 								
 								<fillPercent>0.21</fillPercent>
 							</restriction>
@@ -560,8 +560,8 @@
 							<flipVertical>South</flipVertical>
 							
 							<restriction Class = "Vehicles.LaunchRestriction_Runway">
-								<width>(-3, 3)</width>
-								<height>(-30, 2)</height>
+								<width>(-6, 5)</width>
+								<height>(-60, 6)</height>
 								
 								<fillPercent>0.21</fillPercent>
 							</restriction>
