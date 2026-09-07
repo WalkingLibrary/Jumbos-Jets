@@ -18,7 +18,7 @@
         <DebugSymbols>true</DebugSymbols>
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
+        <OutputPath>bin\Debug\FinalModFolder\1.6\Assemblies\</OutputPath>
         <DefineConstants>DEBUG;TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
+        <OutputPath>bin\Debug\FinalModFolder\1.6\Assemblies\</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
@@ -38,15 +38,51 @@
       <Content Include="About\Preview.png" />
     </ItemGroup>
     <ItemGroup>
+      <Folder Include="1.6\Defs\VehicleDefs\Tier4\Warthog\" />
       <Folder Include="Sounds\" />
       <Folder Include="Textures\Things\Vehicles\Tier4\Tier4_Warthog\" />
     </ItemGroup>
+    <ItemGroup>
+      <AboutFiles Include="About\**\*.*" />
+      <VersionFiles Include="1.6\**\*.*" />
+      <SoundFiles Include="Sounds\**\*.*" />
+      <TextureFiles Include="Textures\**\*.*" />
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
+
+    <Target Name="CopyModFolders" AfterTargets="Build">
+        <MakeDir Directories="bin\Debug\FinalModFolder\About" />
+        <MakeDir Directories="bin\Debug\FinalModFolder\1.6" />
+        <MakeDir Directories="bin\Debug\FinalModFolder\Sounds" />
+        <MakeDir Directories="bin\Debug\FinalModFolder\Textures" />
+
+        <Copy SourceFiles="@(AboutFiles)"
+              DestinationFolder="bin\Debug\FinalModFolder\About\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(VersionFiles)"
+              DestinationFolder="bin\Debug\FinalModFolder\1.6\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(SoundFiles)"
+              DestinationFolder="bin\Debug\FinalModFolder\Sounds\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(TextureFiles)"
+              DestinationFolder="bin\Debug\FinalModFolder\Textures\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
     </Target>
-    <Target Name="AfterBuild">
+
+    <Target Name="CleanExtraDlls" AfterTargets="Build">
+        <ItemGroup>
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\0Harmony.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\Assembly-CSharp.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\SmashTools.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UnityEngine.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UnityEngine.CoreModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UnityEngine.IMGUIModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UnityEngine.TextRenderingModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UpdateLogTool.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\VanillaVehiclesExpanded.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\Vehicles.dll" />
+        </ItemGroup>
+        <Delete Files="@(UnwantedDlls)" />
     </Target>
-    -->
 </Project>
