@@ -43,6 +43,8 @@ namespace JumbosJets
         {
             private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, AerialVehicleInFlight __instance)
             {
+                if (!SortieFlight.IsValid(__instance))
+                    yield break;
                 foreach (Gizmo gizmo in __result)
                     yield return gizmo;
                 if (__instance.Vehicle == null || !__instance.IsPlayerControlled)
@@ -58,20 +60,23 @@ namespace JumbosJets
         [HarmonyPatch(typeof(AerialVehicleInFlight), nameof(AerialVehicleInFlight.MoveForward))]
         private static class ContinueOrbit
         {
-            private static void Prefix(AerialVehicleInFlight __instance)
+            private static bool Prefix(AerialVehicleInFlight __instance)
             {
-                var mission = __instance.flightPath.ArrivalAction as ArrivalAction_Sortie;
-                if (__instance.Flying && mission != null)
-                    mission.ContinueOrbit(__instance);
+                return SortieFlight.BeforeMoveForward(__instance);
             }
         }
 
         [HarmonyPatch(typeof(AerialVehicleInFlight), "Tick")]
         private static class Tick
         {
+            private static bool Prefix(AerialVehicleInFlight __instance)
+            {
+                return SortieFlight.IsValid(__instance);
+            }
+
             private static void Postfix(AerialVehicleInFlight __instance)
             {
-                if (!__instance.Destroyed && __instance.Vehicle != null)
+                if (SortieFlight.IsValid(__instance))
                     __instance.Vehicle.TryGetComp<CompSortie>()?.TickInFlight(__instance);
             }
         }
@@ -79,10 +84,13 @@ namespace JumbosJets
         [HarmonyPatch(typeof(AerialVehicleInFlight), nameof(AerialVehicleInFlight.OrderFlyToTiles))]
         private static class ChangeOrders
         {
-            private static void Prefix(AerialVehicleInFlight __instance, IArrivalAction arrivalAction)
+            private static bool Prefix(AerialVehicleInFlight __instance, IArrivalAction arrivalAction)
             {
+                if (!SortieFlight.IsValid(__instance))
+                    return false;
                 if (__instance.flightPath.ArrivalAction != arrivalAction)
                     __instance.Vehicle.TryGetComp<CompSortie>()?.CancelStrike();
+                return true;
             }
         }
     }

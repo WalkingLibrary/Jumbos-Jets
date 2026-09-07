@@ -25,7 +25,7 @@ namespace JumbosJets
 
         private string AttackDisabledReason(AerialVehicleInFlight aircraft, ArrivalAction_Sortie mission)
         {
-            if (aircraft.Destroyed || !aircraft.Flying || aircraft.flightPath.ArrivalAction != mission)
+            if (!SortieFlight.IsFlying(aircraft) || aircraft.flightPath.ArrivalAction != mission)
                 return "JJ_SortieUnavailable".Translate();
             if (!mission.OnStation)
                 return "JJ_SortieEnRoute".Translate();
@@ -71,13 +71,13 @@ namespace JumbosJets
         private void BeginLanding(AerialVehicleInFlight aircraft, ArrivalAction_Sortie mission)
         {
             Map map = mission.TargetMap;
-            if (map == null || aircraft.Destroyed || !aircraft.Flying || map.Parent.EnterCooldownBlocksEntering())
+            if (map == null || !SortieFlight.IsFlying(aircraft) || map.Parent.EnterCooldownBlocksEntering())
                 return;
             Current.Game.CurrentMap = map;
             CameraJumper.TryHideWorld();
             LandingTargeter.Instance.BeginTargeting(Vehicle, map, (target, rotation) =>
             {
-                if (aircraft.Destroyed || !aircraft.Flying || mission.TargetMap != map ||
+                if (!SortieFlight.IsFlying(aircraft) || mission.TargetMap != map ||
                     aircraft.flightPath.ArrivalAction != mission || map.Parent.EnterCooldownBlocksEntering())
                     return;
                 CancelStrike();
@@ -148,12 +148,17 @@ namespace JumbosJets
         // Unspawned vehicle comps do not tick normally; the aerial world object drives this.
         public void TickInFlight(AerialVehicleInFlight aircraft)
         {
+            if (!SortieFlight.IsFlying(aircraft))
+            {
+                CancelStrike();
+                return;
+            }
             var mission = aircraft.flightPath.ArrivalAction as ArrivalAction_Sortie;
             if (mission != null)
                 mission.CheckWarnings(aircraft);
             if (strikeMap == null)
                 return;
-            if (!aircraft.Flying || mission == null || !mission.OnStation ||
+            if (mission == null || !mission.OnStation ||
                 mission.TargetMap != strikeMap || !HasPilot || !Vehicle.HasEnoughOperators ||
                 Vehicle.CompFueledTravel == null || Vehicle.CompFueledTravel.EmptyTank)
             {

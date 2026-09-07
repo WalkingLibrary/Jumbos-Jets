@@ -22,6 +22,16 @@ Assembly versions do not identify the exact Workshop release. Record the install
 
 ## In-game checklist
 
+The cleared-aircraft regression also has a standalone check:
+
+```powershell
+./Tests/Test-SortieFlight.ps1
+```
+
+All 17 checks pass. The test compiles the production flight guard against small framework stand-ins, reproduces the null dereference in `Flying`, and checks that cleared/destroyed aircraft, missing launchers/paths and stopped flights skip movement. Valid sorties and ordinary flight/landing orders still proceed. It does not run Unity or simulate an actual in-game crash.
+
+The movement prefix now skips both sortie handling and the original `MoveForward` after a flight ends during the same tick. Tick, order and targeting entry points also check the aircraft references before using them. In-game fuel exhaustion remains part of step 10 below.
+
 Use a disposable RimWorld 1.6 save with the dependencies above. Record the game version, Workshop versions and results alongside screenshots of the orbit, target preview, impacts and landing.
 
 1. Start the game and verify there are no missing classes, XML errors, texture errors or Harmony patch errors. Check Warthog construction/spawning and all four orientations and color masks.
