@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <JJ_SortieOrder>Sortie over {0}</JJ_SortieOrder>
+  <JJ_SortieAttack>Strafing run</JJ_SortieAttack>
+  <JJ_SortieAttackDesc>Zoom into the map below and choose an unroofed square for an explosive strafing run. The preview shows a west-to-east line of impacts centered on your target. Friendly units can be hit. The aircraft remains airborne and continues burning fuel.</JJ_SortieAttackDesc>
+  <JJ_SortieLand>Land on this map</JJ_SortieLand>
+  <JJ_SortieLandDesc>Choose a landing location on the sortie map. This ends the sortie and cancels any pending strafing run. Use the normal launch command to travel or land elsewhere.</JJ_SortieLandDesc>
+  <JJ_SortieUnavailable>The aircraft is no longer flying this sortie.</JJ_SortieUnavailable>
+  <JJ_SortieEnRoute>The aircraft must reach the sortie map first.</JJ_SortieEnRoute>
+  <JJ_SortieNoMap>The sortie map is no longer available. Choose another destination with the launch command.</JJ_SortieNoMap>
+  <JJ_SortieLandingCooldown>This map is temporarily closed to arrivals.</JJ_SortieLandingCooldown>
+  <JJ_SortieNeedsPilot>A capable pilot must occupy the pilot seat.</JJ_SortieNeedsPilot>
+  <JJ_SortieNoFuel>The aircraft has no fuel.</JJ_SortieNoFuel>
+  <JJ_SortieRearming>The aircraft is completing its pass or preparing for another run.</JJ_SortieRearming>
+  <JJ_SortieInvalidTarget>Choose a visible, unroofed square on the sortie map.</JJ_SortieInvalidTarget>
+  <JJ_SortieInbound>{0}: strafing run inbound.</JJ_SortieInbound>
+  <JJ_SortieLowFuel>{0} is low on fuel. Order a landing or return flight now; remaining airborne will exhaust its fuel and cause a crash.</JJ_SortieLowFuel>
+  <JJ_SortieMapGone>{0}'s sortie map is no longer available. The aircraft will continue circling and using fuel until you choose another destination.</JJ_SortieMapGone>
+</LanguageData>

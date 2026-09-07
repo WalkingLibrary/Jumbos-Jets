@@ -400,6 +400,17 @@
 		</modExtensions>
 		
 		<comps>	
+			<li Class="JumbosJets.CompProperties_Sortie">
+				<burstCount>9</burstCount>
+				<cellSpacing>2</cellSpacing>
+				<ticksBetweenImpacts>6</ticksBetweenImpacts>
+				<approachTicks>120</approachTicks>
+				<cooldownTicks>600</cooldownTicks>
+				<explosionRadius>1.9</explosionRadius>
+				<damageAmount>35</damageAmount>
+				<armorPenetration>0.5</armorPenetration>
+				<lowFuelFraction>0.2</lowFuelFraction>
+			</li>
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<leakDef>Filth_Fuel</leakDef>
