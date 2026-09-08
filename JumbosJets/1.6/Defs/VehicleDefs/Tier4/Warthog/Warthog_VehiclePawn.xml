@@ -401,12 +401,17 @@
 		
 		<comps>	
 			<li Class="JumbosJets.CompProperties_Sortie">
-				<burstCount>9</burstCount>
-				<cellSpacing>2</cellSpacing>
+				<maxRunCells>15</maxRunCells>
+				<maxImpacts>30</maxImpacts>
+				<steelPerCell>1</steelPerCell>
+				<firingSound>JJ_StrafeFire</firingSound>
+				<afterSound>JJ_StrafeTail</afterSound>
 				<ticksBetweenImpacts>6</ticksBetweenImpacts>
 				<approachTicks>120</approachTicks>
 				<cooldownTicks>600</cooldownTicks>
 				<explosionRadius>1.9</explosionRadius>
+				<scatterRadius>2.5</scatterRadius>
+				<laserGuidedScatterRadius>1.25</laserGuidedScatterRadius>
 				<damageAmount>35</damageAmount>
 				<armorPenetration>0.5</armorPenetration>
 				<lowFuelFraction>0.2</lowFuelFraction>

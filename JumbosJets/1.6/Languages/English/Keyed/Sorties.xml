@@ -2,7 +2,11 @@
 <LanguageData>
   <JJ_SortieOrder>Sortie over {0}</JJ_SortieOrder>
   <JJ_SortieAttack>Strafing run</JJ_SortieAttack>
-  <JJ_SortieAttackDesc>Zoom into the map below and choose an unroofed square for an explosive strafing run. The preview shows a west-to-east line of impacts centered on your target. Friendly units can be hit. The aircraft remains airborne and continues burning fuel.</JJ_SortieAttackDesc>
+  <JJ_SortieAttackDesc>Zoom into the map below, click a starting square, then click toward the end of your strafing line. Any direction is allowed. One outline shows the possible blast area, including the wider unguided scatter. Up to 30 shots progress along up to 15 aim squares. Friendly units can be hit. The aircraft remains airborne and continues burning fuel.</JJ_SortieAttackDesc>
+  <JJ_SortieChooseStart>Choose the first square of the strafing line. Right-click or Escape cancels.</JJ_SortieChooseStart>
+  <JJ_SortieChooseEnd>Choose the direction and end of the line. {0} impacts, {1} steel. Maximum: {2} squares. Right-click or Escape cancels.</JJ_SortieChooseEnd>
+  <JJ_SortieNoSteel>Load steel into the aircraft's inventory. Each impact needs {0} steel.</JJ_SortieNoSteel>
+  <JJ_SortieOutOfSteel>{0}: strafing run stopped because its inventory has insufficient steel.</JJ_SortieOutOfSteel>
   <JJ_SortieLand>Land on this map</JJ_SortieLand>
   <JJ_SortieLandDesc>Choose a landing location on the sortie map. This ends the sortie and cancels any pending strafing run. Use the normal launch command to travel or land elsewhere.</JJ_SortieLandDesc>
   <JJ_SortieUnavailable>The aircraft is no longer flying this sortie.</JJ_SortieUnavailable>
