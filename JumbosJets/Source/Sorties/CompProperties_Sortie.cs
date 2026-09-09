@@ -5,8 +5,8 @@ namespace JumbosJets
 {
     public class CompProperties_Sortie : CompProperties
     {
-        public int maxRunCells = 15;
-        public int maxImpacts = 30;
+        public int maxRunCells = 30;
+        public int maxImpacts = 20;
         public int steelPerCell = 1;
         public SoundDef firingSound;
         public SoundDef afterSound;
@@ -16,8 +16,8 @@ namespace JumbosJets
         public float explosionRadius = 1.9f;
         // Unguided default. A future laser-guidance provider can return
         // laserGuidedScatterRadius from CompSortie.GetScatterRadius.
-        public float scatterRadius = 2.5f;
-        public float laserGuidedScatterRadius = 1.25f;
+        public float scatterRadius = 7f;
+        public float laserGuidedScatterRadius = 2.5f;
         public int damageAmount = 35;
         public float armorPenetration = 0.5f;
         public float lowFuelFraction = 0.2f;

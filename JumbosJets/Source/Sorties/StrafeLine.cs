@@ -6,6 +6,15 @@ namespace JumbosJets
 {
     public static class StrafeLine
     {
+        public static int ImpactLimit(int maxImpacts, int maxRunCells, int selectedCells)
+        {
+            if (maxImpacts <= 0 || maxRunCells <= 0 || selectedCells <= 0)
+                return 0;
+            // A short run represents a proportional part of the full burst.
+            // Round down so the configured maximum is never exceeded.
+            return Math.Min(maxImpacts, Math.Max(1, maxImpacts * selectedCells / maxRunCells));
+        }
+
         // Bresenham's line, truncated from the first selected square. The cap
         // counts grid squares, including the start, equally in every direction.
         public static List<IntVec3> Cells(IntVec3 start, IntVec3 end, int maxCells)

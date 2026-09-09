@@ -401,8 +401,8 @@
 		
 		<comps>	
 			<li Class="JumbosJets.CompProperties_Sortie">
-				<maxRunCells>15</maxRunCells>
-				<maxImpacts>30</maxImpacts>
+				<maxRunCells>30</maxRunCells>
+				<maxImpacts>20</maxImpacts>
 				<steelPerCell>1</steelPerCell>
 				<firingSound>JJ_StrafeFire</firingSound>
 				<afterSound>JJ_StrafeTail</afterSound>
@@ -410,8 +410,9 @@
 				<approachTicks>120</approachTicks>
 				<cooldownTicks>600</cooldownTicks>
 				<explosionRadius>1.9</explosionRadius>
-				<scatterRadius>2.5</scatterRadius>
-				<laserGuidedScatterRadius>1.25</laserGuidedScatterRadius>
+				<!-- XML values override CompProperties_Sortie field defaults at load time. -->
+				<scatterRadius>7</scatterRadius>
+				<laserGuidedScatterRadius>2.5</laserGuidedScatterRadius>
 				<damageAmount>35</damageAmount>
 				<armorPenetration>0.5</armorPenetration>
 				<lowFuelFraction>0.2</lowFuelFraction>

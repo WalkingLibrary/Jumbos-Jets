@@ -181,10 +181,12 @@ namespace JumbosJets
             if (aimedLine.Count == 0)
                 return aimedLine;
             // A-10 ammunition is delivered as a dense burst: two impacts per
-            // aim square by default, capped by maxImpacts and available steel.
-            var burst = new List<IntVec3>(Props.maxImpacts);
-            for (int i = 0; i < Props.maxImpacts; i++)
-                burst.Add(aimedLine[i * aimedLine.Count / Props.maxImpacts]);
+            // aim square on a full-length run, capped proportionally for
+            // shorter runs, by maxImpacts and by available steel.
+            int impactLimit = StrafeLine.ImpactLimit(Props.maxImpacts, Props.maxRunCells, aimedLine.Count);
+            var burst = new List<IntVec3>(impactLimit);
+            for (int i = 0; i < impactLimit; i++)
+                burst.Add(aimedLine[i * aimedLine.Count / impactLimit]);
             return burst.Take(SteelAvailable / Props.steelPerCell).ToList();
         }
 
