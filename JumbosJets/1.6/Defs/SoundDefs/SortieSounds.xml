@@ -13,7 +13,7 @@
         <muteWhenPaused>true</muteWhenPaused>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Sorties/IdleJetSound</clipPath>
+            <clipPath>Sorties/Generic/IdleJetSound</clipPath>
           </li>
         </grains>
         <volumeRange>60~60</volumeRange>
@@ -24,7 +24,7 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>JJ_A10Leaving</defName>
+    <defName>JJ_WarthogLeaving</defName>
     <context>MapOnly</context>
     <maxVoices>16</maxVoices>
     <maxSimultaneous>8</maxSimultaneous>
@@ -33,7 +33,7 @@
         <onCamera>true</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Sorties/A10Leaving</clipPath>
+            <clipPath>Sorties/Warthog/WarthogLeaving</clipPath>
           </li>
         </grains>
         <volumeRange>65~65</volumeRange>
@@ -54,7 +54,7 @@
         <muteWhenPaused>true</muteWhenPaused>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Sorties/StrafeRun</clipPath>
+            <clipPath>Sorties/Warthog/StrafeRun</clipPath>
           </li>
         </grains>
         <volumeRange>65~65</volumeRange>
@@ -74,7 +74,7 @@
         <onCamera>true</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Sorties/StrafeFire</clipPath>
+            <clipPath>Sorties/Warthog/StrafeFire</clipPath>
           </li>
         </grains>
         <volumeRange>45~45</volumeRange>
@@ -92,7 +92,7 @@
         <onCamera>true</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Sorties/StrafeTail</clipPath>
+            <clipPath>Sorties/Warthog/StrafeTail</clipPath>
           </li>
         </grains>
         <volumeRange>65~65</volumeRange>

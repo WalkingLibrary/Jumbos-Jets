@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Warthog</defName>
 		<label>Warthog</label>
-        <description>A heavily armored close-air-support aircraft, the A-10 Warthog is built to loiter over the battlefield and tear apart ground targets with overwhelming firepower. Its powerful rotary cannon and heavy weapons payload make it exceptionally effective against vehicles, fortifications, and exposed infantry.\n\nUnlike faster fighter aircraft, the Warthog sacrifices speed for durability, fuel capacity, and sustained combat effectiveness. Its rugged construction allows it to remain operational even after taking significant damage.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<description>A heavily armored close-air-support aircraft, the Warthog is built to loiter over the battlefield and tear apart ground targets with overwhelming firepower. Its powerful rotary cannon and heavy weapons payload make it exceptionally effective against vehicles, fortifications, and exposed infantry.\n\nUnlike faster fighter aircraft, the Warthog sacrifices speed for durability, fuel capacity, and sustained combat effectiveness. Its rugged construction allows it to remain operational even after taking significant damage.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
         <graphicData>
 			<texPath>Things/Vehicles/Tier4/Tier4_Warthog/Tier4_Warthog</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
@@ -405,7 +405,7 @@
 				<maxImpacts>20</maxImpacts>
 				<steelPerCell>1</steelPerCell>
 				<firingSound>JJ_StrafeFire</firingSound>
-				<afterSound>JJ_A10Leaving</afterSound>
+				<afterSound>JJ_WarthogLeaving</afterSound>
 				<useSingleStrafeSound>true</useSingleStrafeSound>
 				<strafeRunSound>JJ_StrafeRun</strafeRunSound>
 				<ticksBetweenImpacts>6</ticksBetweenImpacts>
