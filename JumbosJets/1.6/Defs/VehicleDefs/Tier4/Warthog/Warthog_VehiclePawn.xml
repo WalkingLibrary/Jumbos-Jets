@@ -46,22 +46,22 @@
 			<li>
 				<start>IgnitionOn</start>
 				<stop>IgnitionOff</stop>
-				<value>VVE_VehicleRotorAirplane</value>
+				<value>JJ_IdleJetSound</value>
 			</li>
 			<li>
 				<start>AerialVehicleLaunch</start>
 				<stop>AerialVehicleLeftMap</stop>
-				<value>VVE_VehicleRotorAirplane</value>
+				<value>JJ_IdleJetSound</value>
 			</li>
 			<li>
 				<start>AerialVehicleLanding</start>
 				<stop>Spawned</stop>
-				<value>VVE_VehicleRotorAirplane</value>
+				<value>JJ_IdleJetSound</value>
 			</li>
 			<li>
 				<start>AerialVehicleCrashLanding</start>
 				<stop>Spawned</stop>
-				<value>VVE_VehicleRotorAirplane</value>
+				<value>JJ_IdleJetSound</value>
 			</li>
 		</soundSustainersOnEvent>
 		
@@ -405,7 +405,9 @@
 				<maxImpacts>20</maxImpacts>
 				<steelPerCell>1</steelPerCell>
 				<firingSound>JJ_StrafeFire</firingSound>
-				<afterSound>JJ_StrafeTail</afterSound>
+				<afterSound>JJ_A10Leaving</afterSound>
+				<useSingleStrafeSound>true</useSingleStrafeSound>
+				<strafeRunSound>JJ_StrafeRun</strafeRunSound>
 				<ticksBetweenImpacts>6</ticksBetweenImpacts>
 				<approachTicks>120</approachTicks>
 				<cooldownTicks>600</cooldownTicks>

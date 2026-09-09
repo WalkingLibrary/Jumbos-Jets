@@ -18,6 +18,7 @@ namespace JumbosJets
         private int nextImpact;
         private int nextImpactTick;
         private int readyTick;
+        private Sustainer strafeSustainer;
 
         public CompProperties_Sortie Props => (CompProperties_Sortie)props;
         private VehiclePawn Vehicle => (VehiclePawn)parent;
@@ -246,7 +247,12 @@ namespace JumbosJets
                     return;
                 }
                 lastFiredCell = cell;
-                Props.firingSound?.PlayOneShotOnCamera(strikeMap);
+                // Start the single sustained clip at the first actual shot,
+                // rather than during the aircraft's approach.
+                if (Props.useSingleStrafeSound && strafeSustainer == null)
+                    StartStrafeSound(strikeMap);
+                if (!Props.useSingleStrafeSound)
+                    Props.firingSound?.PlayOneShotOnCamera(strikeMap);
                 GenExplosion.DoExplosion(cell, strikeMap, Props.explosionRadius, DamageDefOf.Bomb,
                     Vehicle, Props.damageAmount, Props.armorPenetration, damageFalloff: true, doSoundEffects: false);
             }
@@ -258,13 +264,30 @@ namespace JumbosJets
         {
             // One-shots remain alive after the comp clears the run, so firing
             // samples and the post-pass tail overlap without stopping each other.
+            // The departure/tail clip is independent of the firing mode and
+            // plays once after the final successful impact.
             if (lastFiredCell.IsValid && strikeMap != null && Find.Maps.Contains(strikeMap))
                 Props.afterSound?.PlayOneShotOnCamera(strikeMap);
             CancelStrike();
         }
 
+        private void StartStrafeSound(Map map)
+        {
+            StopStrafeSound();
+            if (Props.useSingleStrafeSound && Props.strafeRunSound != null && map != null)
+                strafeSustainer = Props.strafeRunSound.TrySpawnSustainer(SoundInfo.OnCamera());
+        }
+
+        private void StopStrafeSound()
+        {
+            if (strafeSustainer != null && !strafeSustainer.Ended)
+                strafeSustainer.End();
+            strafeSustainer = null;
+        }
+
         public void CancelStrike()
         {
+            StopStrafeSound();
             strikeMap = null;
             strikeCells = null;
             lastFiredCell = IntVec3.Invalid;
@@ -290,6 +313,9 @@ namespace JumbosJets
             if (Scribe.mode == LoadSaveMode.PostLoadInit && strikeMap != null &&
                 (strikeCells == null || strikeCells.Count == 0))
                 CancelStrike(); // An older save may contain the former centered burst.
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && strikeMap != null &&
+                Props.useSingleStrafeSound && strafeSustainer == null)
+                StartStrafeSound(strikeMap);
         }
     }
 }

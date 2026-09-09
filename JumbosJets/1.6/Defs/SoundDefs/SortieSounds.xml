@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <SoundDef>
+    <defName>JJ_IdleJetSound</defName>
+    <sustain>true</sustain>
+    <context>Any</context>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
+    <sustainFadeoutTime>0.35</sustainFadeoutTime>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <muteWhenPaused>true</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Sorties/IdleJetSound</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+        <pitchRange>1~1</pitchRange>
+        <sustainAttack>0.1</sustainAttack>
+        <sustainRelease>0.2</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>JJ_A10Leaving</defName>
+    <context>MapOnly</context>
+    <maxVoices>16</maxVoices>
+    <maxSimultaneous>8</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Sorties/A10Leaving</clipPath>
+          </li>
+        </grains>
+        <volumeRange>65~65</volumeRange>
+        <pitchRange>1~1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>JJ_StrafeRun</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
+    <sustainFadeoutTime>0.35</sustainFadeoutTime>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <muteWhenPaused>true</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Sorties/StrafeRun</clipPath>
+          </li>
+        </grains>
+        <volumeRange>65~65</volumeRange>
+        <pitchRange>1~1</pitchRange>
+        <sustainAttack>0.1</sustainAttack>
+        <sustainRelease>0.1</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
     <defName>JJ_StrafeFire</defName>
     <context>MapOnly</context>
     <maxVoices>32</maxVoices>

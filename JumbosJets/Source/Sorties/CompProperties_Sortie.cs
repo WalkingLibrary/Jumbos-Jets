@@ -10,6 +10,8 @@ namespace JumbosJets
         public int steelPerCell = 1;
         public SoundDef firingSound;
         public SoundDef afterSound;
+        public bool useSingleStrafeSound;
+        public SoundDef strafeRunSound;
         public int ticksBetweenImpacts = 6;
         public int approachTicks = 120;
         public int cooldownTicks = 600;
@@ -35,6 +37,8 @@ namespace JumbosJets
                 yield return "Sorties need positive maxRunCells, maxImpacts and steelPerCell.";
             if (firingSound == null || afterSound == null || firingSound.sustain || afterSound.sustain)
                 yield return "Sorties need firingSound and afterSound one-shot sound definitions.";
+            if (useSingleStrafeSound && (strafeRunSound == null || !strafeRunSound.sustain))
+                yield return "Single strafe audio requires a sustaining strafeRunSound definition.";
             if (ticksBetweenImpacts < 1 || approachTicks < 1 || cooldownTicks < 1)
                 yield return "Sortie timing must be positive.";
             if (explosionRadius <= 0 || damageAmount < 1 || armorPenetration < 0)
