@@ -65,6 +65,7 @@
     <ItemGroup>
       <Folder Include="1.6\Defs\VehicleDefs\Tier4\Warthog\" />
       <Folder Include="Sounds\" />
+      <Folder Include="Textures\Things\Items\" />
       <Folder Include="Textures\Things\Vehicles\Tier4\Tier4_Warthog\" />
     </ItemGroup>
     <ItemGroup>
