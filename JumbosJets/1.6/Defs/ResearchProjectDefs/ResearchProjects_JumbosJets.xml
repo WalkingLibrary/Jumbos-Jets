@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>JJ_JetPropulsion</defName>
+    <label>jet propulsion</label>
+    <description>Develop the specialized propulsion systems and aerospace engineering needed to build and maintain high-performance jet aircraft.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <prerequisites>
+      <li>VVE_AerialVehicles</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <tab>Vehicles</tab>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->jet propulsion</li>
+        <li>subject_story->developed engines capable of sustained high-speed flight</li>
+        <li>subject_story->adapted aerospace engineering for a hostile world</li>
+        <li>subject_story->turned advanced aircraft from theory into working machines</li>
+        <li>subject_gerund->mastering jet aircraft</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

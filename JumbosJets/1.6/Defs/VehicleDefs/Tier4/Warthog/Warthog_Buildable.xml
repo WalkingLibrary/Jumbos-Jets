@@ -22,7 +22,7 @@
 		<size>(12, 12)</size>
 		
 		<researchPrerequisites>
-			<li>VVE_CombatVehicles</li>
+			<li>JJ_JetPropulsion</li>
 		</researchPrerequisites>
 		
 		<costList>

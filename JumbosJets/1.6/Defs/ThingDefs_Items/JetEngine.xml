@@ -19,6 +19,9 @@
       <Gold>8</Gold>
       <ComponentIndustrial>12</ComponentIndustrial>
     </costList>
+    <recipeMaker>
+      <researchPrerequisite>JJ_JetPropulsion</researchPrerequisite>
+    </recipeMaker>
     <tradeTags>
       <li>VVE_CarPartBasic</li>
     </tradeTags>
