@@ -162,8 +162,7 @@ namespace JumbosJets
 
         private int SteelAvailable => StrafeAmmo.Count(Vehicle.inventory?.innerContainer);
 
-        // Future ground guidance can override/patch this hook per map and aim
-        // square. Lower values tighten the footprint; zero is a precise pass.
+        // Override this hook to adjust unguided scatter for a particular map or aim square.
         public virtual float GetScatterRadius(Map map, IntVec3 aimCell)
         {
             return Props.scatterRadius;
@@ -171,6 +170,9 @@ namespace JumbosJets
 
         private List<float> ScatterFor(List<IntVec3> cells, Map map)
         {
+            // Guidance is a property of the whole pass, not individual impacts.
+            if (LaserGuidance.GuidesRun(map, cells))
+                return Enumerable.Repeat(Mathf.Max(0f, Props.laserGuidedScatterRadius), cells.Count).ToList();
             return cells.Select(cell => Mathf.Max(0f, GetScatterRadius(map, cell))).ToList();
         }
 
@@ -204,6 +206,9 @@ namespace JumbosJets
                 cell => ValidImpact(cell, map), cell => cell.InBounds(map));
             // One union of the possible blast cells, with no internal circle outlines.
             GenDraw.DrawFieldEdges(area);
+            List<IntVec3> guidedArea = LaserGuidance.PreviewCells(map);
+            if (guidedArea.Count > 0)
+                GenDraw.DrawFieldEdges(guidedArea, new Color(0.2f, 1f, 0.3f, 1f));
         }
 
         // Unspawned vehicle comps do not tick normally; the aerial world object drives this.

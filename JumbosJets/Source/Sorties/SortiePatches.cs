@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HarmonyLib;
+using Verse.AI;
 using RimWorld.Planet;
 using Vehicles;
 using Vehicles.World;
@@ -13,6 +14,17 @@ namespace JumbosJets
         static SortiePatches()
         {
             new Harmony("walkinglibrary.jumbosjets.sorties").PatchAll();
+        }
+
+        [HarmonyPatch(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.TryTakeOrderedJob))]
+        private static class CancelLaserForOrderedJob
+        {
+            private static void Prefix(Pawn ___pawn)
+            {
+                CompLaserDesignator laser = ___pawn?.equipment?.Primary?.TryGetComp<CompLaserDesignator>();
+                if (laser != null && laser.Active)
+                    laser.Stop();
+            }
         }
 
         [HarmonyPatch(typeof(LaunchProtocol), nameof(LaunchProtocol.GetArrivalOptions))]

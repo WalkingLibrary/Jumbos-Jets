@@ -16,8 +16,7 @@ namespace JumbosJets
         public int approachTicks = 120;
         public int cooldownTicks = 600;
         public float explosionRadius = 1.9f;
-        // Unguided default. A future laser-guidance provider can return
-        // laserGuidedScatterRadius from CompSortie.GetScatterRadius.
+        // A run overlapping an active laser designation uses the tighter radius.
         public float scatterRadius = 7f;
         public float laserGuidedScatterRadius = 2.5f;
         public int damageAmount = 35;

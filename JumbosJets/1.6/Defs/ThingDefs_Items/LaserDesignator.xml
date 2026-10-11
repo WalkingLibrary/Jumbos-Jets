@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BaseGun">
+    <defName>JJ_LaserDesignator</defName>
+    <label>laser designator</label>
+    <description>A reusable laser designator that marks a target for close air support. The operator must remain stationary and maintain a clear line of sight while pointing it.</description>
+    <techLevel>Industrial</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Items/Laser</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>33.9</MarketValue>
+      <Mass>1.5</Mass>
+      <WorkToMake>1200</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <displayPriority>215</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>JumbosJets.Verb_LaserDesignator</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>true</onlyManualCast>
+        <useableInPocketMaps>false</useableInPocketMaps>
+        <label>designate target</label>
+        <defaultProjectile>Bullet_Shotgun</defaultProjectile>
+        <range>60</range>
+        <warmupTime>0.2</warmupTime>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+          <canTargetItems>true</canTargetItems>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="JumbosJets.CompProperties_LaserDesignator">
+        <activeDurationTicks>3600</activeDurationTicks>
+      </li>
+    </comps>
+    <weaponTags><li>JJ_LaserDesignator</li></weaponTags>
+  </ThingDef>
+</Defs>
