@@ -35,7 +35,7 @@
         <useableInPocketMaps>false</useableInPocketMaps>
         <label>designate target</label>
         <defaultProjectile>Bullet_Shotgun</defaultProjectile>
-        <range>60</range>
+        <range>120</range>
         <warmupTime>0.2</warmupTime>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <targetParams>
