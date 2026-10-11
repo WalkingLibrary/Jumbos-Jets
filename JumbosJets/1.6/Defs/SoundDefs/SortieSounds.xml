@@ -3,6 +3,7 @@
   <SoundDef>
     <defName>JJ_IdleJetSound</defName>
     <sustain>true</sustain>
+    <prioritizeNewest>false</prioritizeNewest>
     <context>Any</context>
     <maxVoices>4</maxVoices>
     <maxSimultaneous>2</maxSimultaneous>
@@ -44,6 +45,7 @@
   <SoundDef>
     <defName>JJ_StrafeRun</defName>
     <sustain>true</sustain>
+    <prioritizeNewest>false</prioritizeNewest>
     <context>MapOnly</context>
     <maxVoices>4</maxVoices>
     <maxSimultaneous>2</maxSimultaneous>

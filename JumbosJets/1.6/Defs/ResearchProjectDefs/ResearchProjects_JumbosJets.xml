@@ -9,6 +9,9 @@
     <techprintCount>1</techprintCount>
     <techprintCommonality>1</techprintCommonality>
     <techprintMarketValue>1000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>PlayerColony</li>
+    </heldByFactionCategoryTags>
     <prerequisites>
       <li>VVE_AerialVehicles</li>
     </prerequisites>

@@ -4,7 +4,7 @@
 	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
 		<defName>VVE_Warthog</defName>
 		<label>Warthog</label>
-		<description>A heavily armored close-air-support aircraft, the Warthog is built to loiter over the battlefield and tear apart ground targets with overwhelming firepower. Its powerful rotary cannon and heavy weapons payload make it exceptionally effective against vehicles, fortifications, and exposed infantry.\n\nUnlike faster fighter aircraft, the Warthog sacrifices speed for durability, fuel capacity, and sustained combat effectiveness. Its rugged construction allows it to remain operational even after taking significant damage.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Chemfuel</description>
+		<description>A heavily armored close-air-support aircraft, the Warthog is built to loiter over the battlefield and tear apart ground targets with overwhelming firepower. Its powerful rotary cannon and heavy weapons payload make it exceptionally effective against vehicles, fortifications, and exposed infantry.\n\nUnlike faster fighter aircraft, the Warthog sacrifices speed for durability, fuel capacity, and sustained combat effectiveness. Its rugged construction allows it to remain operational even after taking significant damage.\n\nBeing a flying vehicle, it is extremely obvious when on the move.\n\n&lt;color=#bb8f04&gt;Crew:&lt;/color&gt; Pilot x1\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Jet Fuel</description>
         <graphicData>
 			<texPath>Things/Vehicles/Tier4/Tier4_Warthog/Tier4_Warthog</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
@@ -100,289 +100,29 @@
 			</roles>
 		</properties>
 		
-		<components>
-			<li>
-				<key>Engine</key>
-				<label>Engine</label>
-				<health>120</health>
-				<priorityStatEfficiency>true</priorityStatEfficiency>
-				<depth>Internal</depth>
-				
-				<reactors>
-					<li Class = "Vehicles.Reactor_Explosive">
-						<indicator>VF_Explosive</indicator>
-						<chance>0.25</chance>
-						<maxHealth>0.2</maxHealth>
-						<radius>3</radius>
-						<damageDef>Flame</damageDef>
-					</li>
-				</reactors>
-				
-				<hitbox>
-					<cells>
-						<li>(0, 2)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-					<li>FlightControl</li>
-					<li>FlightSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>LeftLandingWheel</key>
-				<label>Left landing wheel</label>
-				<health>45</health>
-				<depth>External</depth>
-				
-				<armor>
-					<ArmorRating_Blunt>0</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0</ArmorRating_Sharp>
-				</armor>
-				
-				<tags>
-					<li>Wheel</li>
-				</tags>
-				
-				<hitbox>
-					<fallthrough>false</fallthrough>
-					<cells>
-						<li>(-1, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>RightLandingWheel</key>
-				<label>Right landing wheel</label>
-				<health>45</health>
-				<depth>External</depth>
-				
-				<armor>
-					<ArmorRating_Blunt>0</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0</ArmorRating_Sharp>
-				</armor>
-				
-				<tags>
-					<li>Wheel</li>
-				</tags>
-				
-				<hitbox>
-					<fallthrough>false</fallthrough>
-					<cells>
-						<li>(1, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>CentralLandingWheel</key>
-				<label>Central landing wheel</label>
-				<health>45</health>
-				<depth>External</depth>
-				
-				<armor>
-					<ArmorRating_Blunt>0</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0</ArmorRating_Sharp>
-				</armor>
-				
-				<tags>
-					<li>Wheel</li>
-				</tags>
-				
-				<hitbox>
-					<fallthrough>false</fallthrough>
-					<cells>
-						<li>(0, -2)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>LeftHorizontalStabilizer</key>
-				<label>Left horizontal stabilizer</label>
-				<health>40</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(-1, -1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>FlightControl</li>
-				</categories>
-			</li>
-			<li>
-				<key>RightHorizontalStabilizer</key>
-				<label>Right horizontal stabilizer</label>
-				<health>40</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(1, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>FlightControl</li>
-				</categories>
-			</li>
-			<li>
-				<key>FuelIntake</key>
-				<label>Fuel intake</label>
-				<health>50</health>
-				<depth>Internal</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(0, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-					<li>FlightSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>Transmission</key>
-				<label>Transmission</label>
-				<health>40</health>
-				<depth>Internal</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(0, 2)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-					<li>FlightSpeed</li>
-				</categories>
-			</li>
-			<li>
-				<key>Rudder</key>
-				<label>Rudder</label>
-				<health>75</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(0, -2)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>FlightControl</li>
-				</categories>
-			</li>
-			<li>
-				<key>Fuselage</key>
-				<label>Fuselage</label>
-				<health>300</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(0, 2)</li>
-						<li>(0, 1)</li>
-						<li>(0, 0)</li>
-						<li>(0, -1)</li>
-						<li>(0, -2)</li>
-					</cells>
-				</hitbox>
-			</li>
-			<li>
-				<key>Chemtank</key>
-				<label>Chemtank</label>
-				<health>100</health>
-				<depth>Internal</depth>
-				
-				<reactors>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
-					<li Class = "Vehicles.Reactor_Explosive">
-						<indicator>VF_Explosive</indicator>
-						<chance>0.25</chance>
-						<maxHealth>0.2</maxHealth>
-						<radius>3</radius>
-						<damageDef>Flame</damageDef>
-					</li>
-				</reactors>
-				
-				<hitbox>
-					<cells>
-						<li>(0, -1)</li>
-					</cells>
-				</hitbox>
-			</li>
-			<li>
-				<key>LeftWing</key>
-				<label>Left wing</label>
-				<health>125</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(-1, 1)</li>
-						<li>(-2, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>FlightControl</li>
-				</categories>
-			</li>
-			<li>
-				<key>RightWing</key>
-				<label>Right wing</label>
-				<health>125</health>
-				<depth>External</depth>
-				
-				<hitbox>
-					<cells>
-						<li>(1, 1)</li>
-						<li>(2, 1)</li>
-					</cells>
-				</hitbox>
-				
-				<categories>
-					<li>FlightControl</li>
-				</categories>
-			</li>
-			<li>
-				<key>Upholstery</key>
-				<label>Upholstery</label>
-				<health>30</health>
-				<depth>Internal</depth>
-				<hitWeight>2</hitWeight>
-			</li>
-			<li>
-				<key>Dashboard</key>
-				<label>Dashboard</label>
-				<health>30</health>
-				<depth>Internal</depth>
-			</li>
-			<li>
-				<key>Servos</key>
-				<label>Servos</label>
-				<health>20</health>
-				<depth>Internal</depth>
-				<hitWeight>3</hitWeight>
-			</li>
+		<components><li><key>LeftEngine</key><label>Left engine</label><health>120</health><priorityStatEfficiency>true</priorityStatEfficiency><depth>Internal</depth><reactors><li Class = "Vehicles.Reactor_Explosive"><indicator>VF_Explosive</indicator><chance>0.25</chance><maxHealth>0.2</maxHealth><radius>3</radius><damageDef>Flame</damageDef></li></reactors><hitbox><cells><li>(0, 0)</li><li>(0, -1)</li><li>(0, -2)</li></cells></hitbox><categories><li>MoveSpeed</li><li>FlightControl</li><li>FlightSpeed</li></categories></li>
+			<li><key>RightEngine</key><label>Right engine</label><health>120</health><priorityStatEfficiency>true</priorityStatEfficiency><depth>Internal</depth><reactors><li Class = "Vehicles.Reactor_Explosive"><indicator>VF_Explosive</indicator><chance>0.25</chance><maxHealth>0.2</maxHealth><radius>3</radius><damageDef>Flame</damageDef></li></reactors><hitbox><cells><li>(1, 0)</li><li>(1, -1)</li><li>(1, -2)</li></cells></hitbox><categories><li>MoveSpeed</li><li>FlightControl</li><li>FlightSpeed</li></categories></li>
+			<li><key>LeftLandingWheel</key><label>Left landing wheel</label><health>45</health><depth>External</depth><armor><ArmorRating_Blunt>0</ArmorRating_Blunt><ArmorRating_Sharp>0</ArmorRating_Sharp></armor><tags><li>Wheel</li></tags><hitbox><fallthrough>false</fallthrough><cells><li>(-1, 1)</li></cells></hitbox><categories><li>MoveSpeed</li></categories></li>
+			<li><key>RightLandingWheel</key><label>Right landing wheel</label><health>45</health><depth>External</depth><armor><ArmorRating_Blunt>0</ArmorRating_Blunt><ArmorRating_Sharp>0</ArmorRating_Sharp></armor><tags><li>Wheel</li></tags><hitbox><fallthrough>false</fallthrough><cells><li>(2, 1)</li></cells></hitbox><categories><li>MoveSpeed</li></categories></li>
+			<li><key>CentralLandingWheel</key><label>Central landing wheel</label><health>45</health><depth>External</depth><armor><ArmorRating_Blunt>0</ArmorRating_Blunt><ArmorRating_Sharp>0</ArmorRating_Sharp></armor><tags><li>Wheel</li></tags><hitbox><fallthrough>false</fallthrough><cells><li>(0, 4)</li></cells></hitbox><categories><li>MoveSpeed</li></categories></li>
+			<li><key>LeftHorizontalStabilizer</key><label>Left horizontal stabilizer</label><health>40</health><depth>External</depth><hitbox><cells><li>(-5, 1)</li><li>(-4, 1)</li><li>(-3, 1)</li></cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>RightHorizontalStabilizer</key><label>Right horizontal stabilizer</label><health>40</health><depth>External</depth><hitbox><cells><li>(4, 1)</li><li>(5, 1)</li><li>(6, 1)</li></cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>FuelIntake</key><label>Fuel intake</label><health>50</health><depth>Internal</depth><hitbox><cells><li>(0, 6)</li></cells></hitbox><categories><li>MoveSpeed</li><li>FlightSpeed</li></categories></li>
+			<li><key>LeftRudder</key><label>Left rudder</label><health>75</health><depth>External</depth><hitbox><cells><li>(-2, -3)</li><li>(-2, -4)</li><li>(-2, -5)</li></cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>RightRudder</key><label>Right rudder</label><health>75</health><depth>External</depth><hitbox><cells><li>(3, -3)</li><li>(3, -4)</li><li>(3, -5)</li></cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>Fuselage</key><label>Fuselage</label><health>300</health><depth>External</depth><hitbox><cells>
+				<li>(0, 6)</li><li>(0, 5)</li><li>(0, 4)</li><li>(0, 3)</li><li>(0, 2)</li><li>(0, 1)</li><li>(0, 0)</li><li>(0, -1)</li><li>(0, -2)</li><li>(0, -3)</li><li>(0, -4)</li><li>(0, -5)</li>
+				<li>(1, 6)</li><li>(1, 5)</li><li>(1, 4)</li><li>(1, 3)</li><li>(1, 2)</li><li>(1, 1)</li><li>(1, 0)</li><li>(1, -1)</li><li>(1, -2)</li><li>(1, -3)</li><li>(1, -4)</li><li>(1, -5)</li>
+			</cells></hitbox></li>
+			<li><key>JetFuelTank</key><label>Jet fuel tank</label><health>100</health><depth>Internal</depth><reactors><li Class = "Vehicles.Reactor_FuelLeak"/><li Class = "Vehicles.Reactor_Explosive"><indicator>VF_Explosive</indicator><chance>0.25</chance><maxHealth>0.2</maxHealth><radius>3</radius><damageDef>Flame</damageDef></li></reactors><hitbox><cells><li>(0, 1)</li><li>(1, 1)</li></cells></hitbox></li>
+			<li><key>LeftWing</key><label>Left wing</label><health>125</health><depth>External</depth><hitbox><cells>
+				<li>(-5, 0)</li><li>(-4, 0)</li><li>(-3, 0)</li><li>(-2, 0)</li><li>(-1, 0)</li><li>(0, 0)</li><li>(-5, 1)</li><li>(-4, 1)</li><li>(-3, 1)</li><li>(-2, 1)</li><li>(-1, 1)</li><li>(0, 1)</li><li>(-5, 2)</li><li>(-4, 2)</li><li>(-3, 2)</li><li>(-2, 2)</li><li>(-1, 2)</li><li>(0, 2)</li>
+			</cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>RightWing</key><label>Right wing</label><health>125</health><depth>External</depth><hitbox><cells>
+				<li>(1, 0)</li><li>(2, 0)</li><li>(3, 0)</li><li>(4, 0)</li><li>(5, 0)</li><li>(6, 0)</li><li>(1, 1)</li><li>(2, 1)</li><li>(3, 1)</li><li>(4, 1)</li><li>(5, 1)</li><li>(6, 1)</li><li>(1, 2)</li><li>(2, 2)</li><li>(3, 2)</li><li>(4, 2)</li><li>(5, 2)</li><li>(6, 2)</li>
+			</cells></hitbox><categories><li>FlightControl</li></categories></li>
+			<li><key>Upholstery</key><label>Upholstery</label><health>30</health><depth>Internal</depth><hitWeight>2</hitWeight><hitbox><cells><li>(1, 5)</li></cells></hitbox></li>
+			<li><key>Dashboard</key><label>Dashboard</label><health>30</health><depth>Internal</depth><hitbox><cells><li>(0, 5)</li></cells></hitbox></li>
 		</components>
 
 		<modExtensions>
@@ -420,13 +160,13 @@
 				<lowFuelFraction>0.2</lowFuelFraction>
 			</li>
 			<li Class="Vehicles.CompProperties_FueledTravel">
-				<fuelType>Chemfuel</fuelType>
+				<fuelType>JJ_JetFuel</fuelType>
 				<leakDef>Filth_Fuel</leakDef>
 				<fuelConsumptionRate>60</fuelConsumptionRate>
 				<fuelCapacity>100</fuelCapacity>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
-				<fuelConsumptionWorldMultiplier>50</fuelConsumptionWorldMultiplier>
+				<fuelConsumptionWorldMultiplier>8</fuelConsumptionWorldMultiplier>
 				<launchProtocol Class="Vehicles.DirectionalTakeoff">
 					<launchProperties>
 						<horizontal>
