@@ -83,6 +83,10 @@ Get the log after the problem occurs and before relaunching RimWorld; the game r
 [*][b]macOS:[/b] In Finder, press Cmd+Shift+G, enter ~/Library/Logs/Ludeon Studios/RimWorld by Ludeon Studios/, and press Enter. Attach Player.log from that folder.
 [/list]
 
+[h2]Open source[/h2]
+
+Jumbos Jets is open source. Browse the project on [url=https://github.com/WalkingLibrary/Jumbos-Jets]GitHub[/url].
+
 [h2]FAQ[/h2]
 
 [b]How do I unlock the Warthog and its parts?[/b] Research Jet Propulsion in the Vehicles tree. It branches from Aerial Vehicles and requires a techprint.
