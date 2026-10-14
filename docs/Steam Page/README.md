@@ -12,7 +12,7 @@ Take command of the Warthog, a purpose-built attack jet. Develop its specialized
 [url=https://images.steamusercontent.com/ugc/14266512743042036791/D6C600E5F56FB0581A1A6A2CB7C799B3353601EE/][img]https://images.steamusercontent.com/ugc/14266512743042036791/D6C600E5F56FB0581A1A6A2CB7C799B3353601EE/[/img][/url]
 
 [b]Laser Guidance[/b]
-[url=https://images.steamusercontent.com/ugc/12460747524643325980/164D12818D45F2E556D4C07A8F7BEB82FDDCDCC3/][img]https://images.steamusercontent.com/ugc/12460747524643325980/164D12818D45F2E556D4C07A8F7BEB82FDDCDCC3/[/img][/url]
+[url=https://images.steamusercontent.com/ugc/15620570757379662688/DB53B8CBCC0C155E6CCC1192858BEE7EB40A9E4F/][img]https://images.steamusercontent.com/ugc/15620570757379662688/DB53B8CBCC0C155E6CCC1192858BEE7EB40A9E4F/[/img][/url]
 
 [h2]Aircraft[/h2]
 

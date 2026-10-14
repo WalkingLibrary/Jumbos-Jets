@@ -85,3 +85,11 @@ Need to Make the Parts of the Aircraft Make Sense
 Double Engine?
 Crafting Recepe
 New Crafting Items
+
+
+
+
+Issue Notes fro October 12, play
+Can target non insight cells with laser
+No Option for Laser with Group Select
+
