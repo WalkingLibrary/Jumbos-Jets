@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>JJ_MakeJetFuel</defName>
+    <label>refine jet fuel</label>
+    <description>Refine chemfuel into specialized fuel for jet aircraft.</description>
+    <jobString>Refining jet fuel.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>2000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <researchPrerequisite>BiofuelRefining</researchPrerequisite>
+    <recipeUsers>
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <JJ_JetFuel>1</JJ_JetFuel>
+    </products>
+  </RecipeDef>
+</Defs>

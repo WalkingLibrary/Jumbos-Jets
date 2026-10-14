@@ -65,13 +65,15 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="1.6\Defs\VehicleDefs\Tier4\Warthog\" />
+      <Folder Include="1.7\Defs\VehicleDefs\Tier4\Warthog\" />
       <Folder Include="Sounds\" />
       <Folder Include="Textures\Things\Items\" />
       <Folder Include="Textures\Things\Vehicles\Tier4\Tier4_Warthog\" />
     </ItemGroup>
     <ItemGroup>
       <AboutFiles Include="About\**\*.*" />
-      <VersionFiles Include="1.6\**\*.*" />
+      <Version16Files Include="1.6\**\*.*" />
+      <Version17Files Include="1.7\**\*.*" />
       <SoundFiles Include="Sounds\**\*.*" />
       <TextureFiles Include="Textures\**\*.*" />
     </ItemGroup>
@@ -80,14 +82,21 @@
     <Target Name="CopyModFolders" AfterTargets="Build">
         <MakeDir Directories="bin\Debug\FinalModFolder\About" />
         <MakeDir Directories="bin\Debug\FinalModFolder\1.6" />
+        <MakeDir Directories="bin\Debug\FinalModFolder\1.7\Assemblies" />
         <MakeDir Directories="bin\Debug\FinalModFolder\Sounds" />
         <MakeDir Directories="bin\Debug\FinalModFolder\Textures" />
 
         <Copy SourceFiles="@(AboutFiles)"
               DestinationFolder="bin\Debug\FinalModFolder\About\%(RecursiveDir)"
               SkipUnchangedFiles="true" />
-        <Copy SourceFiles="@(VersionFiles)"
+        <Copy SourceFiles="@(Version16Files)"
               DestinationFolder="bin\Debug\FinalModFolder\1.6\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(Version17Files)"
+              DestinationFolder="bin\Debug\FinalModFolder\1.7\%(RecursiveDir)"
+              SkipUnchangedFiles="true" />
+        <Copy SourceFiles="$(TargetPath)"
+              DestinationFolder="bin\Debug\FinalModFolder\1.7\Assemblies"
               SkipUnchangedFiles="true" />
         <Copy SourceFiles="@(SoundFiles)"
               DestinationFolder="bin\Debug\FinalModFolder\Sounds\%(RecursiveDir)"
@@ -109,6 +118,16 @@
             <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\UpdateLogTool.dll" />
             <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\VanillaVehiclesExpanded.dll" />
             <UnwantedDlls Include="bin\Debug\FinalModFolder\1.6\Assemblies\Vehicles.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\0Harmony.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\Assembly-CSharp.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\SmashTools.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\UnityEngine.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\UnityEngine.CoreModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\UnityEngine.IMGUIModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\UnityEngine.TextRenderingModule.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\UpdateLogTool.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\VanillaVehiclesExpanded.dll" />
+            <UnwantedDlls Include="bin\Debug\FinalModFolder\1.7\Assemblies\Vehicles.dll" />
         </ItemGroup>
         <Delete Files="@(UnwantedDlls)" />
     </Target>

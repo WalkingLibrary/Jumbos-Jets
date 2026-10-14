@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>JJ_JetIntake</defName>
+    <label>jet intake</label>
+    <description>A reinforced air intake assembly for a high-performance jet engine.</description>
+    <graphicData>
+      <texPath>Things/Items/EngineIntake</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>98</MarketValue>
+      <Mass>15</Mass>
+      <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <Silver>8</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>JJ_JetPropulsion</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>JJ_JetExhaust</defName>
+    <label>jet exhaust</label>
+    <description>A high-temperature exhaust assembly designed to safely route the gases produced by a jet engine.</description>
+    <graphicData>
+      <texPath>Things/Items/JetEngineExhaust</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>84</MarketValue>
+      <Mass>7</Mass>
+      <WorkToMake>1000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Silver>4</Silver>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>JJ_JetPropulsion</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>JJ_JetFuelTank</defName>
+    <label>jet fuel tank</label>
+    <description>A carefully manufactured fuel tank and feed system for an aircraft.</description>
+    <graphicData>
+      <texPath>Things/Items/JetFuelTank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>97</MarketValue>
+      <Mass>10</Mass>
+      <WorkToMake>2000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <JJ_JetFuel>30</JJ_JetFuel>
+      <Silver>2</Silver>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>JJ_JetPropulsion</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartAdvanced</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="VVE_CarPartBase">
+    <defName>JJ_JetParts</defName>
+    <label>jet parts</label>
+    <description>A collection of specialized aerospace components, including control electronics, sensor packages, actuators, wiring harnesses, valves, fittings, and other precision parts required to keep a jet aircraft operational.</description>
+    <graphicData>
+      <texPath>Things/Items/JetParts</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>149</MarketValue>
+      <Mass>4</Mass>
+      <WorkToMake>3000</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>10</Steel>
+      <Silver>2</Silver>
+      <Gold>2</Gold>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>JJ_JetPropulsion</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>VVE_CarPartBasic</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>
